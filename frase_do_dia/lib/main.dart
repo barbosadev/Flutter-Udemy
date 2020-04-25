@@ -4,17 +4,31 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Frases do dia",
-      home: Container(
-        decoration: BoxDecoration(
-          border: Border.all(width: 3, color: Colors.blue)
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Frase do Dia"),
+          backgroundColor: Colors.black45,
         ),
-        margin: EdgeInsets.only(top: 40),
-        //color: Colors.white,
-        child: Image.asset(
-            "images/coding.png",
-            fit: BoxFit.scaleDown,
-        )
+        body: Padding(
+          padding: EdgeInsets.all(16),
+          child: Text(
+              "Conteudo Principal"
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.black26,
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text("Texto 1"),
+                Text("Texto 2"),
+                Text("Texto 3")
+              ],
+            ),
+          ),
+        ),
       )
   ));
 }
