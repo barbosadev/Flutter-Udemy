@@ -9,39 +9,12 @@ void main() {
         decoration: BoxDecoration(
           border: Border.all(width: 3, color: Colors.blue)
         ),
-        margin: EdgeInsets.only(top: 30),
+        margin: EdgeInsets.only(top: 40),
         //color: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text("t1"),
-                Text("t2"),
-                Text("t3"),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text("t4"),
-                Text("t5"),
-                Text("t6"),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text("t7"),
-                Text("t8"),
-                Text("t9"),
-              ],
-            ),
-
-          ],
-        ),
+        child: Image.asset(
+            "images/coding.png",
+            fit: BoxFit.scaleDown,
+        )
       )
   ));
 }
