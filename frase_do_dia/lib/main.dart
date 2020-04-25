@@ -9,41 +9,37 @@ void main() {
         decoration: BoxDecoration(
           border: Border.all(width: 3, color: Colors.blue)
         ),
-        padding: EdgeInsets.fromLTRB(10, 60, 10, 0),
-        margin: EdgeInsets.all(30),
+        margin: EdgeInsets.only(top: 30),
         //color: Colors.white,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Lorem Ipsum",
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 10,
-                decoration: TextDecoration.none
-              ),
-              textAlign: TextAlign.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text("t1"),
+                Text("t2"),
+                Text("t3"),
+              ],
             ),
-            FlatButton(
-              onPressed: (){
-                print("Botão Pressionado");
-              },
-              child: Text(
-                  "Botão",
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.white,
-                  decoration: TextDecoration.none
-                ),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text("t4"),
+                Text("t5"),
+                Text("t6"),
+              ],
             ),
-            Text("t1"),
-            Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Text("t2"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text("t7"),
+                Text("t8"),
+                Text("t9"),
+              ],
             ),
-            Text("t3"),
+
           ],
         ),
       )
