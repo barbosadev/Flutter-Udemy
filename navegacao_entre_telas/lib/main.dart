@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navegacao_entre_telas/TelaSecundaria.dart';
 
 void main() => runApp(MaterialApp(
   home: TelaPrincipal(),
@@ -27,7 +28,9 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               onPressed: (){
                 Navigator.push(
                     context,
-                    route
+                    MaterialPageRoute(
+                      builder: (context) => TelaSecundaria()
+                    )
                 );
               },
             )
