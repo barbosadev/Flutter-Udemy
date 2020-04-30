@@ -3,6 +3,7 @@ import 'package:navegacao_entre_telas/TelaSecundaria.dart';
 
 void main() => runApp(MaterialApp(
   home: TelaPrincipal(),
+  debugShowCheckedModeBanner: false,
 ));
 
 class TelaPrincipal extends StatefulWidget {
@@ -16,23 +17,31 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Tela Principal"),
-        backgroundColor: Colors.orange,
       ),
       body: Container(
         padding: EdgeInsets.all(32),
         child: Column(
           children: <Widget>[
-            RaisedButton(
-              child: Text("Ir para a segunda tela"),
-              padding: EdgeInsets.all(15),
-              onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => TelaSecundaria()
-                    )
-                );
-              },
+            Center(
+              child:
+                RaisedButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TelaSecundaria()
+                      )
+                    );
+                  },
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  child: Text(
+                    "Segunda Tela",
+                    style: TextStyle(
+                        fontSize: 20
+                    ),
+                  ),
+                ),
             )
           ],
         ),
