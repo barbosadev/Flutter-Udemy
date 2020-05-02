@@ -1,8 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter/services.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,9 +10,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  TextEditingController _controllerCep = TextEditingController();
+  var _retorno = "";
   _recuperarCep() async {
 
-    String url = "https://viacep.com.br/ws/01311300/json/";
+    String url = "https://viacep.com.br/ws/"+ _controllerCep.text +"/json";
     http.Response response;
 
     response = await http.get(url);
@@ -23,7 +24,9 @@ class _HomeState extends State<Home> {
     String bairro = retorno["bairro"];
     String localidade = retorno["localidade"];
 
-    print("$logradouro\n$complemento\n$bairro\n$localidade");
+    setState(() {
+      _retorno = "$logradouro\n$complemento\n$bairro\n$localidade";
+    });
 
     //print("resposta: " + logradouro);
   }
@@ -38,6 +41,14 @@ class _HomeState extends State<Home> {
         padding: EdgeInsets.all(40),
         child: Column(
           children: <Widget>[
+            TextField(
+              keyboardType: TextInputType.number,
+              maxLength: 8,
+              decoration: InputDecoration(
+                labelText: "CEP"
+              ),
+              controller: _controllerCep,
+            ),
             RaisedButton(
               child: Text(
                 "Clique Aqui",
@@ -48,6 +59,9 @@ class _HomeState extends State<Home> {
               ),
               color: Colors.blue,
               onPressed: _recuperarCep,
+            ),
+            Text(
+              _retorno
             )
           ],
         ),
