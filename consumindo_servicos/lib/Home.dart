@@ -27,8 +27,6 @@ class _HomeState extends State<Home> {
     setState(() {
       _retorno = "$logradouro\n$complemento\n$bairro\n$localidade";
     });
-
-    //print("resposta: " + logradouro);
   }
 
   @override
