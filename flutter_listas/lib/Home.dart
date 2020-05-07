@@ -34,6 +34,39 @@ class _HomeState extends State<Home> {
           itemCount: _itens.length,
           itemBuilder: (context, indice){
             return ListTile(
+              onTap: (){
+                showDialog(
+                  context: context,
+                  builder: (context){
+                    return AlertDialog(
+                      title: Text(_itens[indice]["titulo"]),
+                      titlePadding: EdgeInsets.all(20),
+                      content: Text(_itens[indice]["descricao"]),
+                      //backgroundColor: Colors.grey,
+                      actions: <Widget>[
+                        FlatButton(
+                          child: Text("Cancelar"),
+                          onPressed: (){
+                            Navigator.pop(context);
+                          },
+                        ),
+                        RaisedButton(
+                          child: Text(
+                            "Enviar",
+                            style: TextStyle(
+                              color: Colors.white
+                            ),
+                          ),
+                          onPressed: (){
+
+                          },
+                          color: Colors.blue,
+                        )
+                      ],
+                    );
+                  }
+                );
+              },
               title: Text(_itens[indice]["titulo"]),
               subtitle: Text(_itens[indice]["descricao"]),
             );
